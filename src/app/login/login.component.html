@@ -2,3 +2,17 @@
 <h1>
     ogunlade adebayo peter
 </h1>
+<div>
+  <video #videoPlayer autoplay></video>
+  <canvas #canvas style="display: none;"></canvas>
+  <button (click)="startCamera()" *ngIf="!cameraStarted">Start Camera</button>
+  <button (click)="stopCamera()" *ngIf="cameraStarted">Stop Camera</button>
+  <button (click)="takePicture()" *ngIf="cameraStarted">Take Picture</button>
+</div>
+<div *ngIf="capturedImageDataUrl">
+  <h2>Captured Image</h2>
+  <img #capturedImage [src]="capturedImageDataUrl" alt="Captured Image">
+</div>
+
+  
+  

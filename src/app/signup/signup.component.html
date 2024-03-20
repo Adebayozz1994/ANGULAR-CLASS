@@ -1,7 +1,45 @@
 <p>signup works!</p>
+<div class="container">
+  <div class="col-5 mx-auto">
+    <h1 class="">contact</h1>
+    <form action="" class="form-control">
+      <label for="firstname">Firstname:</label>
+      <input type="text" name="firstname" [(ngModel)]="firstname" id="firstname">
+      <label for="lastname">Lastname:</label>
+      <input type="text" name="lastname" [(ngModel)]="lastname" id="lastname">
+      <label for="email">Email:</label>
+      <input type="email" name="email" [(ngModel)]="email" id="email">
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" [(ngModel)]="phone" id="phone">
+      <label for="address">Address:</label>
+      <input type="text" name="address" [(ngModel)]="address" id="address">
+      
+      <button (click)="signup()">signup</button>
+    </form>
 
-<form action="">
-  <input type="text" name="firstname" [(ngModel)]="firstname">
-  <input type="text" name="lastname" [(ngModel)]="lastname">
-  <button (click)="signup()">signup</button>
-</form>
+  </div>
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>View</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of this.contactarray, let i = index">
+      <td>{{i+1}}</td>
+      <td>{{contact.firstname}}</td>
+      <td>{{contact.lastname}}</td>
+      <td><button class="btn btn-primary" (click)="view(i)">View</button></td>
+      <td>
+        <button class="btn btn-secondary">Delete</button>
+        <button class="btn btn-info">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
