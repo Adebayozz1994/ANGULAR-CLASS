@@ -8,7 +8,7 @@ import { DisplaycontactComponent } from './displaycontact/displaycontact.compone
 export const routes: Routes = [
     {path:'signup', children:[
         {path:'', component:SignupComponent},
-        {path:':index', component:DisplaycontactComponent}
+        {path:':firstname', component:DisplaycontactComponent}
     ]},
     {path:'login', component: LoginComponent},
     {path:'navbar', component: NavbarpageComponent},

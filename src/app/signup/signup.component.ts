@@ -51,11 +51,11 @@ export class SignupComponent {
 
   }
 
-  view(i:any){
-    this.rout.navigate([`signup/${i}`])
+ view(i: any) { 
+    this.rout.navigate([`signup/${i}`]); 
     console.log(i);
     
+}
 
-  }
 
 }
