@@ -5,10 +5,11 @@ import { NavbarpageComponent } from './navbarpage/navbarpage.component';
 import { LoginComponent } from './login/login.component';
 import { DisplaycontactComponent } from './displaycontact/displaycontact.component';
 
+
 export const routes: Routes = [
     {path:'signup', children:[
         {path:'', component:SignupComponent},
-        {path:':firstname', component:DisplaycontactComponent}
+        {path:':firstname', component:DisplaycontactComponent},
     ]},
     {path:'login', component: LoginComponent},
     {path:'navbar', component: NavbarpageComponent},

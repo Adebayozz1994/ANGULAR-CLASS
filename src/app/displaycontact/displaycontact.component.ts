@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {ContactserviceService} from '../services/contactservice.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-displaycontact',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,CommonModule],
   templateUrl: './displaycontact.component.html',
   styleUrl: './displaycontact.component.css'
 })
 export class DisplaycontactComponent {
-  constructor(public Activatedr:ActivatedRoute){}
+  constructor(public Activatedr:ActivatedRoute, public arrayone: ContactserviceService){}
   public contactobj:any={}
   ngOnInit(){
+    console.log(this.arrayone);
+    
     console.log(this.Activatedr.snapshot.params['firstname']);
     let firstname= this.Activatedr.snapshot.params['firstname'];
     console.log(firstname);
