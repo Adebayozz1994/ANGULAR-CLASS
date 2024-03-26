@@ -42,12 +42,15 @@
   <tbody>
     <tr *ngFor="let contact of this.contactarray, let i = index">
       <td>{{i+1}}</td>
-      <td>{{contact.firstname}}</td>
-      <td>{{contact.lastname}}</td>
+      <td><input type="text" value="{{contact.firstname}}" [(ngModel)]="contact.firstname"></td>
+      <td><input type="text" value="{{contact.lastname}}" [(ngModel)]="contact.lastname"></td>
+      <td><input type="text" value="{{contact.email}}" [(ngModel)]="contact.email"></td>
+      <td><input type="text" value="{{contact.phone}}" [(ngModel)]="contact.phone"></td>
+      <td><input type="text" value="{{contact.address}}" [(ngModel)]="contact.address"></td>
       <td><button class="btn btn-primary" (click)="view(contact.firstname)">View</button></td>
       <td>
         <button class="btn btn-secondary" (click)="deleteContact(i)">Delete</button>
-        <button class="btn btn-info">Edit</button>
+        <button class="btn btn-info"(click)='editContact(i,contact.firstname,contact.lastname,contact.email,contact.phone,contact.address)'>Edit</button>
 
       </td>
     </tr>

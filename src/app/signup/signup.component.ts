@@ -74,7 +74,20 @@ console.log(this.contactarray);
   }
 }
 
-public editContact(contact: ContactInterface) {
+public editContact(i: number,fname: string,lname: string,email: string,phone: string,address: string) {
+  console.log(fname,lname,email,phone,address);
+  let newobj={
+    firstname:fname,
+    lastname:lname,
+    email:email,
+    phone:phone,
+    address:address
+
+  }
+  this.contactarray.splice(i,1,newobj)
+  console.log(this.contactarray);
+  localStorage.setItem('contacts_details', JSON.stringify(this.contactarray));
+  
 
 }
 

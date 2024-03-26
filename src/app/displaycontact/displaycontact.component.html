@@ -6,23 +6,25 @@
     <h1>Phone: <span>{{contactobj.phone}}</span></h1>
     <h1>Address: <span>{{contactobj.address}}</span></h1>
 </div>
-<!-- <div>
-    <table>
-        <thead>
-          <tr>
-            <th>S/N</th>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>View</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let contact of this.arrayone, let j = index">
-            <td>{{j+1}}</td>
-            <td>{{contact.firstname}}</td>
-            <td>{{contact.lastname}}</td>
-          </tr>
-        </tbody>
-      </table>
-</div> -->
+<table>
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>View</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of this.arrayone, let i = index">
+      <td>{{i+1}}</td>
+      <td><input type="text" value="{{contact.firstname}}" [(ngModel)]="contact.firstname"></td>
+      <td><input type="text" value="{{contact.lastname}}" [(ngModel)]="contact.lastname"></td>
+      <td><input type="text" value="{{contact.email}}" [(ngModel)]="contact.email"></td>
+      <td><input type="text" value="{{contact.phone}}" [(ngModel)]="contact.phone"></td>
+      <td><input type="text" value="{{contact.address}}" [(ngModel)]="contact.address"></td>
+      
+    </tr>
+  </tbody>
+</table>
