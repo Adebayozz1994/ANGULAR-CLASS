@@ -7,6 +7,7 @@ export class ContactserviceService {
 
   constructor() { }
   public info = 'my name is adebayozz'
+  
 
 
   public returninfo(){
@@ -24,4 +25,8 @@ export class ContactserviceService {
     {name: 'peter', address:'iwo', age: 43},
     {name: 'john', address:'oyo', age: 63},
   ]
+  
+  getArray(): any[] {
+    return this.arrayone;
+  }
 }

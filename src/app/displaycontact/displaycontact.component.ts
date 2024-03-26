@@ -12,10 +12,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './displaycontact.component.css'
 })
 export class DisplaycontactComponent {
-  constructor(public Activatedr:ActivatedRoute, public arrayone: ContactserviceService){}
+  constructor(public Activatedr:ActivatedRoute, public contactService: ContactserviceService){}
   public contactobj:any={}
+  public info2:any[]=[];
+  
   ngOnInit(){
-    console.log(this.arrayone);
+    console.log(this.contactService.getArray());
+    this.info2 = this.contactService.getArray();
     
     console.log(this.Activatedr.snapshot.params['firstname']);
     let firstname= this.Activatedr.snapshot.params['firstname'];
