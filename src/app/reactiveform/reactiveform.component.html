@@ -1,0 +1,15 @@
+<p>reactiveform works!</p>
+
+
+<div class="container">
+    <h1 class="text-center">Reactice Form</h1>
+    <form [formGroup]="one" (ngSubmit)="submit()">
+        <input type="text" name="firstname" formControlName="fname" placeholder="firstname" class="{{bootstrap}}">
+        <input type="text" name="lastname" formControlName="lname" placeholder="lastname" class="{{bootstrap}}">
+        <input type="text" name="email" formControlName="em" placeholder="email" class="{{bootstrap}}">
+        <input type="text" name="password" formControlName="pass" placeholder="password" class="{{bootstrap}}">
+        <p class="text-center text-danger">{{this.message}}</p>
+        <button class="btn btn-secondary">submit</button>
+        
+    </form>
+</div>

@@ -29,4 +29,5 @@ export class ContactserviceService {
   getArray(): any[] {
     return this.arrayone;
   }
+  user: any;
 }

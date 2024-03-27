@@ -28,7 +28,7 @@ export class SignupComponent {
   public contactarray:ContactInterface[] = [];
   public info=''
   ngOnInit(){
-    console.log(this.contractserv.getcontact());
+    console.table(this.contractserv.getcontact());
     console.log(this.contractserv.returninfo());
     this.info = this.contractserv.returninfo();
     console.log(this.info);

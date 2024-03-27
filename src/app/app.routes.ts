@@ -4,6 +4,9 @@ import { SignupComponent } from './signup/signup.component';
 import { NavbarpageComponent } from './navbarpage/navbarpage.component';
 import { LoginComponent } from './login/login.component';
 import { DisplaycontactComponent } from './displaycontact/displaycontact.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
+import { ReactivedashboardComponent } from './reactivedashboard/reactivedashboard.component';
 
 
 export const routes: Routes = [
@@ -12,7 +15,12 @@ export const routes: Routes = [
         {path:':firstname', component:DisplaycontactComponent},
     ]},
     {path:'login', component: LoginComponent},
-    {path:'navbar', component: NavbarpageComponent},
+    {path:'reactiveform', component: ReactiveformComponent},
+    {path:'reactivesignin', component: ReactivesigninComponent},
+    {path:'dashboard', component: ReactivedashboardComponent },
+
+
+    {path:'', component: NavbarpageComponent},
     {path:'home',redirectTo:'',pathMatch:'full'},
     {path:'dashboard', children:[
         {path:'', component:SignupComponent}
@@ -21,4 +29,5 @@ export const routes: Routes = [
         {path:'', component:NavbarpageComponent}, 
         {path:':index', component:LandingpageComponent}
     ]}
+    
 ];

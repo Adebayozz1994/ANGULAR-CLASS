@@ -1,0 +1,10 @@
+<p>reactivesignin works!</p>
+<div>
+    <h1 class="text-center text-primary">Sign in here</h1>
+    <input type="text" class="form-control my-2" [(ngModel)]="em" placeholder="email">
+    <input type="text" class="form-control my-2" [(ngModel)]="pass" placeholder="password">
+    <button class="btn btn-primary w-100" (click)="signin()">Sign in</button>
+    <div>
+        <h1 class="text-center text-danger">{{this.message}}</h1>
+    </div>
+</div>

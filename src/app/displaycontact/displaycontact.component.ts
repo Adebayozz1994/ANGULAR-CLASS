@@ -26,7 +26,7 @@ export class DisplaycontactComponent {
     
     let contactarray=JSON.parse(localStorage["contacts_details"])
     console.log(contactarray);
-    console.log(contactarray[firstname]);
+    // console.log(contactarray[firstname]);
     this.contactobj = contactarray.find((contact: any) => contact.firstname === firstname);
     console.log(this.contactobj);
       // find by index//
