@@ -25,8 +25,10 @@ submit(){
     this.reactivearray=JSON.parse(localStorage['reactiveform'])
     const emailExists = this.reactivearray.find((item: any) => item.em === this.one.value.em);
     if (emailExists) {
-  this.message="Email already exists"
-
+      this.message = "Email already exists";
+      setTimeout(() => {
+          this.message = ''; 
+      }, 1000);
     }else{
 
       this.reactivearray.push(this.one.value)

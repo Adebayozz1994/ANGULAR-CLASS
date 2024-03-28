@@ -33,6 +33,9 @@ if(user){
   
 }else{
   this.message="invalid username or password"
+  setTimeout(() => {
+    this.message = ''; 
+}, 1000);
   console.log("login failed");
   
 }

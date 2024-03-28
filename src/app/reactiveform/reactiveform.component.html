@@ -2,14 +2,33 @@
 
 
 <div class="container">
-    <h1 class="text-center">Reactice Form</h1>
-    <form [formGroup]="one" (ngSubmit)="submit()">
-        <input type="text" name="firstname" formControlName="fname" placeholder="firstname" class="{{bootstrap}}">
-        <input type="text" name="lastname" formControlName="lname" placeholder="lastname" class="{{bootstrap}}">
-        <input type="text" name="email" formControlName="em" placeholder="email" class="{{bootstrap}}">
-        <input type="text" name="password" formControlName="pass" placeholder="password" class="{{bootstrap}}">
-        <p class="text-center text-danger">{{this.message}}</p>
-        <button class="btn btn-secondary">submit</button>
-        
-    </form>
-</div>
+    <h1 class="text-center text-primary">Reactive Form</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="one" (ngSubmit)="submit()">
+          <div class="mb-3">
+            <label for="firstname" class="form-label text-primary fw-bold">First Name</label>
+            <input type="text" id="firstname" name="firstname" formControlName="fname" placeholder="Enter your first name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label text-primary fw-bold">Last Name</label>
+            <input type="text" id="lastname" name="lastname" formControlName="lname" placeholder="Enter your last name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label text-primary fw-bold">Email</label>
+            <input type="email" id="email" name="email" formControlName="em" placeholder="Enter your email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label text-primary fw-bold">Password</label>
+            <input type="password" id="password" name="password" formControlName="pass" placeholder="Enter your password" class="form-control">
+          </div>
+          <p class="text-center text-danger">{{ message }}</p>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

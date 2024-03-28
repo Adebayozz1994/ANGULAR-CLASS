@@ -1,10 +1,15 @@
 <p>reactivesignin works!</p>
-<div>
-    <h1 class="text-center text-primary">Sign in here</h1>
-    <input type="text" class="form-control my-2" [(ngModel)]="em" placeholder="email">
-    <input type="text" class="form-control my-2" [(ngModel)]="pass" placeholder="password">
-    <button class="btn btn-primary w-100" (click)="signin()">Sign in</button>
-    <div>
-        <h1 class="text-center text-danger">{{this.message}}</h1>
+<div class="container">
+  <h1 class="text-center text-primary">Sign in here</h1>
+    <div class="mb-3">
+      <label for="email" class="form-label text-primary fw-bold">Email</label>
+      <input type="text" id="email" class="form-control" [(ngModel)]="em" placeholder="Enter your email">
     </div>
+    <div class="mb-3">
+      <label for="password" class="form-label text-primary fw-bold">Password</label>
+      <input type="password" id="password" class="form-control" [(ngModel)]="pass" placeholder="Enter your password">
+    </div>
+    <p class="text-center text-danger">{{ message }}</p>
+    <button  class="btn btn-primary w-100" (click)="signin()">Sign in</button>
 </div>
+
