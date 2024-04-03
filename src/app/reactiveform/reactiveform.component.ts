@@ -18,6 +18,7 @@ public one=this.formbuider.group({
   lname:['',[Validators.minLength(6),Validators.required]],
   em: ['', [Validators.email, Validators.required]],
   pass: ['', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/), Validators.required]],
+  gender: ['', [Validators.required]]
 })
 public reactivearray:any =[]
 public message=''

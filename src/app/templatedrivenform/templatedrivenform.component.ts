@@ -5,8 +5,8 @@ interface ContactInterface{
   firstname:string,
   lastname:string,
   email:string,
-  address:string,
-  phone:string
+  password:string
+  gender: string 
 }
 @Component({
   selector: 'app-templatedrivenform',
@@ -17,4 +17,12 @@ interface ContactInterface{
 })
 export class TemplatedrivenformComponent {
     public firstname=''
+    public lastname=''
+    public email=''
+    public password=''
+    public gender = "";
+    
+    
+
+
 }
