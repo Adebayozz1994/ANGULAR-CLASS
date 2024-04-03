@@ -1,7 +1,14 @@
 import { inject } from '@angular/core';
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 
 export const reactiveguardGuard: CanActivateFn = (route, state) => {
-  let routers = inject{}
-  return true;
+  let routers = inject(Router);
+  if(localStorage['reactiveform']){
+    routers
+      .navigate(['reactiveform'])
+      .then(() => console.log('Navigation is successful!'))
+      .catch((error) => console.log(error));
+  }
+ 
+  return false;
 };

@@ -16,8 +16,8 @@ export class ReactiveformComponent {
 public one=this.formbuider.group({
   fname:['', [Validators.minLength(6),Validators.required]],
   lname:['',[Validators.minLength(6),Validators.required]],
-  em:'',
-  pass:['',[Validators.pattern('')]],
+  em: ['', [Validators.email, Validators.required]],
+  pass: ['', [Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/), Validators.required]],
 })
 public reactivearray:any =[]
 public message=''
