@@ -1,11 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reactiveform',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './reactiveform.component.html',
   styleUrl: './reactiveform.component.css'
 })
@@ -13,10 +14,10 @@ export class ReactiveformComponent {
   constructor(public formbuider: FormBuilder, public router:Router) { }
   public bootstrap ='form-control my-2'
 public one=this.formbuider.group({
-  fname:'',
-  lname:'',
+  fname:['', [Validators.minLength(6),Validators.required]],
+  lname:['',[Validators.minLength(6),Validators.required]],
   em:'',
-  pass:''
+  pass:['',[Validators.pattern('')]],
 })
 public reactivearray:any =[]
 public message=''
@@ -28,7 +29,7 @@ submit(){
       this.message = "Email already exists";
       setTimeout(() => {
           this.message = ''; 
-      }, 1000);
+      }, 2000);
     }else{
 
       this.reactivearray.push(this.one.value)

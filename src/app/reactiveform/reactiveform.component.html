@@ -8,11 +8,26 @@
         <form [formGroup]="one" (ngSubmit)="submit()">
           <div class="mb-3">
             <label for="firstname" class="form-label text-primary fw-bold">First Name</label>
-            <input type="text" id="firstname" name="firstname" formControlName="fname" placeholder="Enter your first name" class="form-control">
+            <input type="text" id="firstname" name="firstname" formControlName="fname" placeholder="Enter your first name" class="form-control" [class.is-valid]="one.get('fname')?.valid && one.get('fname')?.touched" [class.is-invalid]="one.get('fname')?.invalid && one.get('fname')?.dirty">
+            <div *ngIf="one.get('fname')?.invalid">
+              <span class="text-danger" *ngIf="one.get('fname')?.errors?.['minlength']">First Name minimum length is 6
+            </span>
+            <span class="text-danger" *ngIf="one.get('fname')?.errors?.['required'] && one.get('fname')?.dirty">
+              First Name is required
+            </span>
           </div>
+          </div>
+          
           <div class="mb-3">
             <label for="lastname" class="form-label text-primary fw-bold">Last Name</label>
             <input type="text" id="lastname" name="lastname" formControlName="lname" placeholder="Enter your last name" class="form-control">
+            <div *ngIf="one.get('lname')?.invalid">
+              <span class="text-danger" *ngIf="one.get('lname')?.errors?.['minlength']">Last Name minimum length is 6
+            </span>
+            <span class="text-danger" *ngIf="one.get('lname')?.errors?.['required'] && one.get('lname')?.dirty">
+              Last Name is required
+            </span>
+          </div>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label text-primary fw-bold">Email</label>
@@ -24,7 +39,7 @@
           </div>
           <p class="text-center text-danger">{{ message }}</p>
           <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="one.invalid">Submit</button>
           </div>
         </form>
       </div>

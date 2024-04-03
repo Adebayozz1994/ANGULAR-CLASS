@@ -1,0 +1,23 @@
+<p>templatedrivenform works!</p>
+<div class="row justify-content-center">
+    <div class="col-md-6 justify-content-center">
+        <form #formone="ngForm">
+            <label class="formGroup" for="">firstname</label>
+        <input type="text" class="form-control my-2" [(ngModel)]="firstname" name="fname" #fname="ngModel" required [class.is-valid]="fname.valid" [class.is-invalid]="fname.invalid && fname.touched">
+        <div *ngIf="fname.invalid && fname.dirty">
+            <span class="text-danger" *ngIf="fname?.errors?.['required']">
+                this field is required
+            </span>
+        
+        </div>
+        {{fname.dirty}}
+        {{fname.pristine}}
+        {{fname.touched}}
+        {{fname.untouched}}
+        {{fname.valid}}
+        {{fname.invalid}}
+        <button class="btn btn-primary" [disabled]="formone.invalid">submit</button>
+        </form>
+    </div>
+</div>
+    

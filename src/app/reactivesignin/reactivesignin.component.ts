@@ -26,19 +26,22 @@ ngOnInit(){
 }
 signin(){
   let user = this.array.find((users:any, index:any)=>users.em===this.em && users.pass===this.pass )
-if(user){
-  this.service.user = user;
-  this.Router.navigate(['/dashboard'], { state: { user } });
-  console.log("login successfull");
-  
-}else{
+if(!user || user.em == "" && user.pass == ""){
   this.message="invalid username or password"
-  setTimeout(() => {
-    this.message = ''; 
-}, 1000);
+   setTimeout(() => {
+          this.message = ''; 
+      }, 2000);
   console.log("login failed");
   
 }
+else{
+
+  this.service.user = user;
+  this.Router.navigate(['/dashboard'], { state: { user } });
+  console.log("login successfull");
+}
+  
+
 
 
   console.log(user);

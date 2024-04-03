@@ -8,6 +8,9 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
 import { ReactivedashboardComponent } from './reactivedashboard/reactivedashboard.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { TemplateBindingParseResult } from '@angular/compiler';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { reactiveguardGuard } from './guards/reactiveguard.guard';
 
 
 export const routes: Routes = [
@@ -19,8 +22,11 @@ export const routes: Routes = [
     {path:'reactiveform', component: ReactiveformComponent},
     {path:'reactivesignin', component: ReactivesigninComponent},
     {path:'dashboard', component: ReactivedashboardComponent },
+    {path:'template', component: TemplatedrivenformComponent, canActivate:[reactiveguardGuard]},
+
     { path: 'error', component: ErrorpageComponent },
     { path: '**', redirectTo: '/error' },
+    
 
 
     {path:'', component: NavbarpageComponent},
