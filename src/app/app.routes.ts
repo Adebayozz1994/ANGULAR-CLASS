@@ -11,6 +11,9 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { TemplateBindingParseResult } from '@angular/compiler';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 import { reactiveguardGuard } from './guards/reactiveguard.guard';
+import { BehavioursubjectComponent } from './behavioursubject/behavioursubject.component';
+import { UpdatebehaviourComponent } from './updatebehaviour/updatebehaviour.component';
+import { ParentbehaviourComponent } from './parentbehaviour/parentbehaviour.component';
 
 
 export const routes: Routes = [
@@ -23,6 +26,12 @@ export const routes: Routes = [
     {path:'reactivesignin', component: ReactivesigninComponent},
     {path:'dashboard', component: ReactivedashboardComponent },
     {path:'template', component: TemplatedrivenformComponent, canActivate:[reactiveguardGuard]},
+    {path:'behavioursubject', component: BehavioursubjectComponent},
+    {path:'updatebehaviour', component: UpdatebehaviourComponent},
+    {path:'parentbehaviour', component: ParentbehaviourComponent},
+
+
+
 
     { path: 'error', component: ErrorpageComponent },
     { path: '**', redirectTo: '/error' },

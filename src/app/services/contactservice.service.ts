@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,11 @@ import { Injectable } from '@angular/core';
 export class ContactserviceService {
 
   constructor() { }
+  public behavioursubject = new BehaviorSubject<any>({
+    name: 'adebayo',
+    address: 'peter',
+    age:0
+  });
   public info = 'my name is adebayozz'
   
 
