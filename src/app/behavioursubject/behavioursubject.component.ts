@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ContactserviceService } from '../services/contactservice.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-behavioursubject',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './behavioursubject.component.html',
   styleUrl: './behavioursubject.component.css'
 })
@@ -21,12 +22,12 @@ public array =  [
   senditem(item:any){
     this.behaviour.behavioursubject.next(item)
   }
-  ngOnInit(){
-    this.behaviour.behavioursubject.subscribe((data:any)=>{
-      // console.log(data)
-      this.behobj.push(data)
-      console.log(this.behobj);
+  // ngOnInit(){
+  //   this.behaviour.behavioursubject.subscribe((data:any)=>{
+  //     // console.log(data)
+  //     this.behobj.push(data)
+  //     console.log(this.behobj);
       
-    }
-  )};
+  //   }
+  // )};
 };

@@ -9,13 +9,15 @@ import { ContactserviceService } from '../services/contactservice.service';
   styleUrl: './updatebehaviour.component.css'
 })
 export class UpdatebehaviourComponent {
-  constructor(public behaviour: ContactserviceService){
- 
-
-  }
+  constructor(public behaviour: ContactserviceService){}
+  public obj:any={}
 public message = 'this is SQI college of ICT'
-mes(){
-  this.behaviour.behavioursubject.next(this.message)
+ngOnInit(){
+  this.behaviour.behavioursubject.subscribe(data=>{
+    console.log(data);
+    this.obj=data;
+    
+  })
   
 }
 }
