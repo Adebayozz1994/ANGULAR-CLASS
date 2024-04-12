@@ -16,13 +16,24 @@ interface ContactInterface{
   styleUrl: './templatedrivenform.component.css'
 })
 export class TemplatedrivenformComponent {
-    public firstname=''
-    public lastname=''
-    public email=''
-    public password=''
-    public gender = "";
+ public contact :ContactInterface ={
+     firstname:'',
+     lastname:'',
+     email:'',
+    password:'',
+     gender:''
+   
+  }
     
-    
+    contactarray:any=[]
+submit(){
+  localStorage.setItem('contact',JSON.stringify(this.contactarray))
+  this.contactarray.push(this.contact)
+  
+  // console.log('contactarray');
+  console.log(this.contact);
+  
 
+}
 
 }
