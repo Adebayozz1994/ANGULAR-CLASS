@@ -14,6 +14,7 @@ import { reactiveguardGuard } from './guards/reactiveguard.guard';
 import { BehavioursubjectComponent } from './behavioursubject/behavioursubject.component';
 import { UpdatebehaviourComponent } from './updatebehaviour/updatebehaviour.component';
 import { ParentbehaviourComponent } from './parentbehaviour/parentbehaviour.component';
+import { ApicalsComponent } from './apicals/apicals.component';
 
 
 export const routes: Routes = [
@@ -29,6 +30,8 @@ export const routes: Routes = [
     {path:'behavioursubject', component: BehavioursubjectComponent},
     {path:'updatebehaviour', component: UpdatebehaviourComponent},
     {path:'parentbehaviour', component: ParentbehaviourComponent},
+    {path:'apicall', component: ApicalsComponent},
+
 
 
 

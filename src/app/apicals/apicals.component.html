@@ -1,0 +1,23 @@
+<p>apicals works!</p>
+
+  
+    <!-- <div class="row d-md-flex" *ngFor="let user of usersArray">
+        <div class="card shadow-sm mx-2 mb-1 col-md-3">
+            <p class="fw-bold">{{ user.name }}  </p>
+            <p>{{ user.email }}</p>
+            <p class="text-center">{{user.company.name}}</p>
+
+        </div>
+    </div> -->
+ 
+
+
+
+<div class="row d-md-flex" *ngFor="let user of photos">
+    <div class="card shadow-sm mx-2 mb-1 col-md-3">
+       <p>{{user.userId}}</p>
+       <p>{{user.id}}</p>
+       <p>{{user.title}}</p>
+       <button class="btn btn-primary" (click)="change()" [style.background-color]="buttonColor">{{ user.completed ? 'Completed' : 'Mark as Completed' }}</button>
+    </div>
+</div>
