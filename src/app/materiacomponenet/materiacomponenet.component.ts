@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { MateriamoduleModule } from '../materiamodule/materiamodule.module';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-materiacomponenet',
   standalone: true,
   imports: [MateriamoduleModule,ReactiveFormsModule],
   templateUrl: './materiacomponenet.component.html',
-  styleUrl: './materiacomponenet.component.css'
+  styleUrl: './materiacomponenet.component.css',
+  providers: [provideNativeDateAdapter()],
 })
 export class MateriacomponenetComponent {
+  panelOpenState = false;
+  hide = true;
   constructor(private builder:FormBuilder) {
     
   }
