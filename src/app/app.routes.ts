@@ -15,6 +15,9 @@ import { BehavioursubjectComponent } from './behavioursubject/behavioursubject.c
 import { UpdatebehaviourComponent } from './updatebehaviour/updatebehaviour.component';
 import { ParentbehaviourComponent } from './parentbehaviour/parentbehaviour.component';
 import { ApicalsComponent } from './apicals/apicals.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { MateriacomponenetComponent } from './materiacomponenet/materiacomponenet.component';
 
 
 export const routes: Routes = [
@@ -31,6 +34,12 @@ export const routes: Routes = [
     {path:'updatebehaviour', component: UpdatebehaviourComponent},
     {path:'parentbehaviour', component: ParentbehaviourComponent},
     {path:'apicall', component: ApicalsComponent},
+    {path:'parent', component: ParentComponent},
+    {path:'child', component: ChildComponent},
+    {path:'material', component: MateriacomponenetComponent},
+
+
+
 
 
 

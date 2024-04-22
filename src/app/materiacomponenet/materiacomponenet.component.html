@@ -1,0 +1,72 @@
+<p>materiacomponenet works!</p>
+<button mat-button color="link"> click me</button>
+<button mat-raised-button color="accent"> click me</button>
+<button mat-flat-button color="warn"> click me</button> 
+<button mat-icon-button><mat-icon color="warn">home</mat-icon></button>
+<button mat-icon-button><mat-icon color="warn">zoom_in</mat-icon></button>
+ <!-- material-card -->
+
+ <mat-card class="col-md-3">
+    <mat-card-header>
+        <mat-card-title>Angular 17</mat-card-title>
+        <mat-card-subtitle>Latest Version</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200px" width="200px" alt="" >
+        <p>Explore Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus reiciendis, incidunt necessitatibus doloremque laborum voluptate!</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="basic">Explore</button>
+    </mat-card-actions>
+ </mat-card>
+
+
+ <!-- material stepper -->
+ <mat-stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Personal Details</ng-template>
+        <div class="form-control">
+            <mat-label>Full Name</mat-label>
+            <input type="text" matInput placeholder="adebayo peter" formControlName="full_name">
+        </div>
+        <div class="form-control">
+            <mat-label>E-mail Address</mat-label>
+            <input type="text" matInput placeholder="adebayo@gmail.com" formControlName="email">
+        </div>
+        <div>
+            <button mat-button matStepperNext>next</button>
+         </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>address</ng-template>
+        <div class="form-control">
+            <mat-label>Residential address</mat-label>
+            <input type="text" matInput placeholder="adebayo peter" formControlName="">
+        </div>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+         </div>
+         <div>
+            <button mat-button matStepperNext>next</button>
+         </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button>Reset</button>
+        </div>
+      </mat-step>
+ </mat-stepper>
+
+
+
+ 
+
+

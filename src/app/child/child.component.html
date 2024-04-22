@@ -1,0 +1,8 @@
+<p>child works!</p>
+<div>
+    <!-- <span>message from parent  - {{msgToChild}}</span> -->
+    <input class="form-control" type="text" [(ngModel)]="response" (keyup)="sendMsgToParent(response)">
+     <span>Number of items in cart - {{addItems.length}}</span>
+     <!-- <div *ngFor="let item of list"> -->
+     <!-- </div> -->
+</div>

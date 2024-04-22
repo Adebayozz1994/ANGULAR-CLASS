@@ -1,0 +1,19 @@
+<p>parent works!</p>
+<div>
+    <input type="text" class="form-control" [(ngModel)]="message">
+    <div *ngFor="let item of items">
+        <div class="card col-md-3 mx-2">
+            <div class="card-body">
+                <p class="fw-bold">{{item.name}}</p>
+                <span class="text-sm text-muted">{{item.price}}</span>
+                <button class="btn btn-primary text-light px-2" (click)="addToCart(item)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+<div>
+    Message from child-{{msgFromChild}}
+</div>
+
+
+    <app-child [msgToChild]="message"[addItems]="cartItems" (emitToParent)="receiveMsgFromChild($event)"></app-child>
+</div>
