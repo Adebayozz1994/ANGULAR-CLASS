@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MyApicallsService } from '../services/my-apicalls.service';
 interface ContactInterface{
   firstname:string,
   lastname:string,
@@ -18,7 +19,7 @@ interface ContactInterface{
 })
 export class TemplatedrivenformComponent {
 
-  constructor(public Router:Router){}
+  constructor(public Router:Router,public MyApi:MyApicallsService,public formBuilder:FormBuilder){}
 
  public contact :ContactInterface ={
      firstname:'',
@@ -31,20 +32,19 @@ export class TemplatedrivenformComponent {
     
     contactarray:any=[]
     submit() {
-      // Retrieve existing contacts from localStorage
-      const storedContacts = localStorage.getItem('contact');
-      if (storedContacts) {
-        this.contactarray = JSON.parse(storedContacts);
+
+      const UserDetails = {
+        name: this.contact.firstname,
+        last_name: this.contact.lastname,
+        email: this.contact.email,
+        password: this.contact.password,
+        // gender: this.contact.gender
       }
-  
-      // Add the new contact to the array
-      this.contactarray.push(this.contact);
-  
-      // Store the updated contact array back into localStorage
-      localStorage.setItem('contact', JSON.stringify(this.contactarray));
-  
-      // Navigate to another route after submitting
-      this.Router.navigate(['/reactivedashboard']);
+      this.MyApi.registerUser(UserDetails).subscribe((res)=>{
+        console.log(res);
+        
+      })
+   
     }
   
 

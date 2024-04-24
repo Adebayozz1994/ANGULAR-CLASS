@@ -12,6 +12,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {CdkDrag} from '@angular/cdk/drag-drop';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -20,6 +21,7 @@ import {CdkDrag} from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [],
   imports: [
+    MatSnackBarModule,
     CdkDrag,
     MatProgressSpinnerModule,
     MatProgressBarModule,
@@ -35,6 +37,7 @@ import {CdkDrag} from '@angular/cdk/drag-drop';
     MatButtonToggleModule
   ],
   exports:[
+    MatSnackBarModule,
     CdkDrag,
     MatProgressSpinnerModule,
     MatProgressBarModule,

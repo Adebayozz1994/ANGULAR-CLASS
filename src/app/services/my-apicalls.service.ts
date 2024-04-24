@@ -17,4 +17,7 @@ export class MyApicallsService {
   getTodos(){
     return this.http.get('https://jsonplaceholder.typicode.com/todos')
   }
+  registerUser(data: any){
+    return this.http.post('https://localhost/level4/oopFolder/frontendconnection.php', data);
+  }
 }

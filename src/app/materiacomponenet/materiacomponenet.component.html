@@ -146,4 +146,29 @@
     <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="200px" width="200px" alt="">
     <!-- Drag me around -->
   </div>
+
+
+<!-- snackbar -->
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input matInput value="Disco party!" #message>
+  </mat-form-field>
   
+  <mat-form-field>
+    <mat-label>Action</mat-label>
+    <input matInput value="Dance" #action>
+  </mat-form-field>
+  
+  <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">open snack-bar</button>
+  
+  
+
+  <!-- custom snackbar -->
+  <mat-form-field>
+    <mat-label>duration (in seconds)</mat-label>
+    <input matInput [(ngModel)]="duration" placeholder="5">
+  </mat-form-field>
+
+  <button mat-stroked-button color="accent" (click)="openCustomSnackBar()">open snack-bar</button>
+
+
