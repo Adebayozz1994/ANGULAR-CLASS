@@ -64,8 +64,18 @@
                     Password must contain at least one uppercase letter, one lowercase letter, and one digit, and be at least 10 characters long.
                 </span>
             </div>
+            
+                <label class="formGroup" for="">Address</label>
+            <input type="text" class="form-control my-2" [(ngModel)]="contact.address" name="address" #address="ngModel" required address [class.is-valid]="address.valid" [class.is-invalid]="address.invalid && address.touched">
+            <div *ngIf="address.invalid && address.dirty">
+            </div>
+
+           
 
             <button (click)="submit()" class="btn btn-primary" [disabled]="formone.invalid">Submit</button>
+            <div>
+                <p>{{message}}</p>
+            </div>
         </form>
     </div>
 </div>

@@ -18,6 +18,7 @@ import { ApicalsComponent } from './apicals/apicals.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { MateriacomponenetComponent } from './materiacomponenet/materiacomponenet.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,8 @@ export const routes: Routes = [
     {path:'parent', component: ParentComponent},
     {path:'child', component: ChildComponent},
     {path:'material', component: MateriacomponenetComponent},
+    {path:'navbar', component: NavbarComponent},
+
 
 
 

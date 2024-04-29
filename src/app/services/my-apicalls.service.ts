@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class MyApicallsService {
 
   constructor(
-    private http: HttpClient
+    public http: HttpClient
   ) { };
   getUsers(){
     return this.http.get('https://jsonplaceholder.typicode.com/users')
@@ -18,6 +18,6 @@ export class MyApicallsService {
     return this.http.get('https://jsonplaceholder.typicode.com/todos')
   }
   registerUser(data: any){
-    return this.http.post('https://localhost/level4/oopFolder/frontendconnection.php', data);
+    return this.http.post('http://localhost/level4/oopFolder/frontendconnection.php', data);
   }
 }
